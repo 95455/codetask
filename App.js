@@ -1,10 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
+import { NavigationContainer, createNavigatorFactory } from '@react-navigation/native';
+import PlantList from "./PlantList";
+
 export default function App() {
+  const Stack = createNavigation();
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <NavigationContainer>
+        <Stack.Navigation inttialRoute="PlantList">
+          <Stack.screen="PlantList">{PlantList}<Stack>
+      </NavigationContainer>
+    
       <StatusBar style="auto" />
     </View>
   );
